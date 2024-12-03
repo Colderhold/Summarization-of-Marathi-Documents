@@ -108,15 +108,3 @@ def process(text_data):
     else:
         print("Not enough parameters")
 
-if __name__ == "__main__":
-    st.markdown("<h1 style='text-align: center;'>Text Summarization in Marathi using Text Rank (Positional)</h1>",
-                unsafe_allow_html=True)
-    uploaded_files = st.file_uploader('Upload a marathi text file', type=['txt'], accept_multiple_files=False)
-    
-    if uploaded_files is not None:
-        bytes_data = uploaded_files.read().decode('utf-8')
-        result = process(bytes_data)
-        st.subheader("Input Text\n")
-        st.markdown(f"<div style='text-align: justify;'>{bytes_data}</div>", unsafe_allow_html=True)
-        st.subheader("Summarized text\n")
-        st.markdown(f"<div style='text-align: justify;'>{result}</div>", unsafe_allow_html=True)
